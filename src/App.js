@@ -1,15 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
+import Nasa from "./Nasa";
 import "./App.css";
 
-function App() {
-  return (
+class App extends Component {
+  render() {
+    return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <h1>Nasa API</h1>
+      <Nasa />
     </div>
   );
+ }
 }
-
 export default App;
