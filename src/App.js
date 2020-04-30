@@ -1,15 +1,21 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
+import NasaPost from "./NasaPost";
 import Nasa from "./Nasa";
 import "./App.css";
 
-class App extends Component {
-  render() {
-    return (
+function App() {
+
+  const [count, setCount] = useState(0);
+
+
+return (
+  
     <div className="App">
-      <h1>Nasa API</h1>
-      <Nasa />
+        <h1>NASA API!</h1>
+        <NasaPost/>
     </div>
-  );
- }
+);
 }
+
+
 export default App;
