@@ -10,9 +10,12 @@ function App() {
 
 return (
   
-    <div className="App">
+    <div className="App" >
         <h1>NASA API!</h1>
-        <NasaPost/>
+        <NasaPost className="post"/>
+        <NasaPost className="post"/>
+        <NasaPost className="post"/>
+        <NasaPost className="post"/>
     </div>
 );
 }

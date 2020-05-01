@@ -5,13 +5,19 @@ import axios from "axios";
 
 const Nasa = props => {
 
+// Display a loading message while the data is fetching
 
-      return (
-      <li key={props.id}>
+
+const explBG = {
+  backgroundColor : 'Grey',
+  margin : 'auto'
+}
+
+      return ( 
+      <li>
         <h2>Title: {props.title}</h2>
-        <img src={props.URL}></img>
-        <p>{props.desc}</p>
-        <p></p>
+        <img className="img" src={props.hdurl}></img>
+        <p  className="info" style={explBG}>{props.explanation}</p>
         <p></p>
       <p>Date: {props.date}</p>
       </li>

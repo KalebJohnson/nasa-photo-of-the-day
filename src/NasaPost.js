@@ -4,41 +4,43 @@ import axios from "axios";
 
 const NasaPost = props => {
 
-  const [data, setData] = useState([]);
+  const [info, setInfo] = useState([]);
 
   useEffect(() => {
     axios
     .get('https://api.nasa.gov/planetary/apod?api_key=h1pcSvDdtUjcu8xxWa09Xv8REkEhHC8yMVh4htnt')
     .then(response => {
-      setData(response.data);
+      setInfo(response.data);
+      console.log('data!' , info);
     });
   }, []);
-  
-  useEffect(() => {
-    console.log('data!' , data);
-  }, [data]);
 
+  
+  
 
   //  const [data, setData] = useState();
 
   return (
-    <div>
-      <ul>{
-        data.map((info) => {
-          return <Nasa id={info.id} pic={info.img}
-           />
-        })
-        
-        
+    <div className="post">
+      <ul>
+        <Nasa
+                title={info.title}
+                hdurl={info.hdurl} 
+                explanation={info.explanation} 
+                date={info.date} />
 
-    }</ul>
-
+      </ul>
     </div>
   );
 };
 export default NasaPost;
 
+//{info.map(data => {
+//  return <Nasa/>
+//})}
 
+
+// <Nasa title={data.title} hdurl={data.hdurl} explanation={data.explanation} date={data.date} />
 
 
 
